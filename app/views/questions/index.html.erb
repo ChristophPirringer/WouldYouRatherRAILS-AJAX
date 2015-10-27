@@ -1,0 +1,11 @@
+<h1>Questions</h1>
+<ul id="question-list">
+  <% @questions.each do |question| %>
+    <!-- <li><%= question.firstCount %> | <%= link_to question.firstOption, question_path(question, :choice => "firstCount"), method: "patch" %>  -- OR -- <%= link_to question.secondOption, question_path(question, :choice => "secondCount"), method: "patch" %> | <%= question.secondCount %></li> -->
+    <%= render question %>
+    <!-- <%# render "question" question: question %> -->
+
+  <% end %>
+</ul>
+
+<%= link_to "New Question", new_question_path, id: "new_link", remote: true %>

@@ -1,0 +1,7 @@
+<%= form_for @question, remote: true do |f| %>
+  <%= f.label :firstOption %>
+  <%= f.text_field :firstOption %>
+  <%= f.label :secondOption %>
+  <%= f.text_field :secondOption %>
+  <%= f.submit %>
+<% end %>
