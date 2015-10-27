@@ -1,1 +1,4 @@
-<li><span id="firstCount_<%= question.id %>"><%= question.firstCount %></span> | <%= link_to question.firstOption, question_path(question, :choice => "firstCount"), method: "patch", remote: true %>  -- OR -- <%= link_to question.secondOption, question_path(question, :choice => "secondCount"), method: "patch", remote: true %> | <span id="secondCount_<%= question.id %>"> <%= question.secondCount %></span></li>
+<li><span id="firstCount_<%= question.id %>"><%= question.firstCount %></span> | <%= link_to question.firstOption, question_path(question, :choice => "firstCount"), method: "patch", remote: true %>  -- OR -- <%= link_to question.secondOption, question_path(question, :choice => "secondCount"), method: "patch", remote: true %> | <span id="secondCount_<%= question.id %>"> <%= question.secondCount %></span>
+
+<%= link_to "Leave a comment", question_path(question) %>
+</li>

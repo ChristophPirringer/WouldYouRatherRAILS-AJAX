@@ -1,0 +1,9 @@
+<%= form_for [@question, @comment], remote: true, :url => question_comments_path(@question) do |f| %>
+  <%= f.label :text %>
+  <%= f.text_field :text %>
+
+  <%= f.submit %>
+<% end %>
+
+
+<!-- , remote: true -->

@@ -2,7 +2,11 @@ class QuestionsController < ApplicationController
   def index
     @questions = Question.all
     @question = Question.new
-    # render :index
+  end
+
+  def show
+    @question = Question.find(params[:id])
+    @comment = @question.comments.new
   end
 
   def new
@@ -17,7 +21,6 @@ class QuestionsController < ApplicationController
         format.html { redirect_to questions_path }
         format.js
       end
-      # redirect_to questions_path
     else
       render :index
     end
@@ -42,19 +45,6 @@ class QuestionsController < ApplicationController
       end
     end
   end
-  # def update
-  #   @question = Question.find(params[:id])
-  #   if
-  #     params[:choice] == "firstCount"
-  #     @question.firstCount += 1
-  #     @question.save
-  #     redirect_to questions_path
-  #   else
-  #     @question.secondCount += 1
-  #     @question.save
-  #     redirect_to questions_path
-  #   end
-  # end
 
   private
 

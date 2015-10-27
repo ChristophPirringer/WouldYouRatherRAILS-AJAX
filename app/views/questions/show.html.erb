@@ -1,0 +1,9 @@
+<h3>The epic battle between</h3> <h4><%=@question.firstOption%></h4> and <h4><%=@question.secondOption%></h4>
+
+<%= render "comment_form" %>
+
+<ul id="comment-list">
+  <% @question.comments.each do |comment| %>
+    <%= render comment %>
+  <% end %>
+</ul>
